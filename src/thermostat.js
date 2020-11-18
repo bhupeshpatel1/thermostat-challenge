@@ -51,12 +51,12 @@ class Thermostat { // the properties of our Thermostat object are held in the {}
     this.temperature = this.DEFAULT_TEMPERATURE;
   }
   energyUsage() {
-  if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT) {
-    return 'low-usage';
+    if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT) {
+      return 'low-usage';
+    }
+    if (this.temperature <= this.HIGH_ENERGY_USAGE_LIMIT) {
+      return 'medium-usage';
+    }
+    return 'high-usage';
   }
-  if (this.temperature <= this.HIGH_ENERGY_USAGE_LIMIT) {
-    return 'medium-usage';
-  }
-  return 'high-usage';
-}
 }
