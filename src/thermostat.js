@@ -3,9 +3,60 @@
 // object constructor function - enables us to make instances of the Thermostat object by running: new Thermostat()
 class Thermostat { // the properties of our Thermostat object are held in the {}
   constructor() { // we give our object a property that 'holds' the current temperature
-    this.temperature = 20; // 'this' tells us that temperature belongs to the object Thermostat
+    this.MINIMUM_TEMPERATURE = 10;
+    this.MAX_LIMIT_PSM_ON = 25;
+    this.MAX_LIMIT_PSM_OFF = 32;
+    this.DEFAULT_TEMPERATURE = 20;
+    this.temperature = this.DEFAULT_TEMPERATURE; // 'this' tells us that temperature belongs to the object Thermostat
+    this.powerSavingMode = true;
+    this.MEDIUM_ENERGY_USAGE_LIMIT = 18;
+    this.HIGH_ENERGY_USAGE_LIMIT = 25;
   }
+
   getCurrentTemperature() {
     return this.temperature;
   }
+  up() {
+    if (this.isMaximumTemperature()) {
+      return;
+    }
+    this.temperature += 1
+  }
+  isMaximumTemperature() {
+    if (this.isPowerSavingModeOn() === false) {
+      return this.temperature === this.MAX_LIMIT_PSM_OFF;
+    }
+    return this.temperature === this.MAX_LIMIT_PSM_ON;
+  }
+
+  isMinimumTemperature() {
+    return this.temperature === this.MINIMUM_TEMPERATURE;
+  }
+  down() {
+    if (this.isMinimumTemperature()) {
+      return;
+    }
+    this.temperature -= 1
+  }
+  isPowerSavingModeOn() {
+    return this.powerSavingMode === true;
+  }
+  switchPowerSavingModeOff() {
+    this.powerSavingMode = false;
+  }
+  switchPowerSavingModeOn() {
+    this.powerSavingMode = true;
+  }
+  resetTemperature() {
+    this.temperature = this.DEFAULT_TEMPERATURE;
+  }
+  energyUsage() {
+  if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT) {
+    return 'low-usage';
+  }
+  if (this.temperature <= this.HIGH_ENERGY_USAGE_LIMIT) {
+    return 'medium-usage';
+  }
+  return 'high-usage';
+}
 }
