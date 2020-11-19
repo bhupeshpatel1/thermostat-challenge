@@ -52,7 +52,7 @@ describe('when power saving mode is on', function() {
   });
 
 
-describe('When power saving mode is off', function() {
+describe('when power saving mode is off', function() {
   it ("has a maximum temperature of 32 degrees", function() {
     thermostat.switchPowerSavingModeOff();
     for (var i = 0; i < 13; i++) {
@@ -70,7 +70,7 @@ describe('When power saving mode is off', function() {
   });
   describe('displaying usage levels', function() {
     describe('when the temperature is below 18 degrees', function() {
-      it('it is considered low-usage', function() {
+      it ('it is considered low-usage', function() {
         for (var i = 0; i < 3; i++) {
           thermostat.down();
         }
@@ -79,13 +79,13 @@ describe('When power saving mode is off', function() {
     });
 
     describe('when the temperature is between 18 and 25 degrees', function() {
-      it('it is considered medium-usage', function() {
+      it ('it is considered medium-usage', function() {
         expect(thermostat.energyUsage()).toEqual('medium-usage');
       });
     });
 
     describe('when the temperature is anything else', function() {
-      it('it is considered high-usage', function() {
+      it ('it is considered high-usage', function() {
         thermostat.powerSavingMode = false;
         for (var i = 0; i < 6; i++) {
           thermostat.up();
