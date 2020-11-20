@@ -10,13 +10,14 @@
 
     <section>
 
-      <h1>Current temperature: <span id="current-temperature">20</span></h1>
-      <select id="current-city">
+      <h1>Temperature: <span id="temperature">20</h1>
+      <p>Outside Temperature: <span id="outsideTemp"></span></p1>
+      <!-- <select id="current-city">
         <option value="london">London</option>
         <option value="newyork">New York</option>
         <option value="paris">Paris</option>
         <option value="tokyo">Tokyo</option>
-      </select>
+      </select> -->
 
       <p>
         <button id="temperature-up">+</button>
@@ -32,6 +33,20 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="src/thermostat.js"></script>
     <script src="src/interface.js"></script>
+    <script>
+      const api_url = 'http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric';
+      async function getTemperature() {
+        const response = await fetch(api_url);
+        const data = await response.json();
+        const {temp} = data;
+
+        document.getElementById("outsideTemp").textContent = data.main.temp; //insert the relevant api data id - data.main.temp
+        console.log(data);
+      }
+
+      getTemperature();
+
+    </script>
 
   </body>
 
