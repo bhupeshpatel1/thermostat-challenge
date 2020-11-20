@@ -7,18 +7,11 @@
   </head>
 
   <body>
+    <section>
+      <h1>Temperature: <span id="temperature">20</h1>
+    </section>
 
     <section>
-
-      <h1>Temperature: <span id="temperature">20</h1>
-      <p>Outside Temperature: <span id="outsideTemp"></span></p1>
-      <!-- <select id="current-city">
-        <option value="london">London</option>
-        <option value="newyork">New York</option>
-        <option value="paris">Paris</option>
-        <option value="tokyo">Tokyo</option>
-      </select> -->
-
       <p>
         <button id="temperature-up">+</button>
         <button id="temperature-down">-</button>
@@ -27,13 +20,28 @@
         <button id="powersaving-on">PSM on</button>
         <button id="powersaving-off">PSM off</button>
       </p>
+    </section>
 
+    <section>
+      <h4>Select your City:
+      <select id="current-city">
+        <option value="london">London</option>
+        <option value="delhi">New Delhi</option>
+        <option value="paris">Paris</option>
+        <option value="tokyo">Tokyo</option>
+      </select>
+      </h4>
+      <h4>Current Temperature:
+        <p>
+          <span id="current-temperature"></span>
+        </p>
+      </h4>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="src/thermostat.js"></script>
     <script src="src/interface.js"></script>
-    <script>
+    <!-- <script>
       const api_url = 'http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric';
       async function getTemperature() {
         const response = await fetch(api_url);
@@ -46,7 +54,7 @@
 
       getTemperature();
 
-    </script>
+    </script> -->
 
   </body>
 
