@@ -9,3 +9,45 @@
 .high-usage {
   color: red;
 }
+
+#main{
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif; font-size: 20px;
+  /* font-family: 'Raleway', sans-serif; font-size: 20px; */
+}
+
+select {
+  font-family: 'Montserrat', sans-serif; font-size: 20px;
+  /* font-family: 'Raleway', sans-serif; font-size: 20px; */
+}
+
+button1 {
+  background-color: #FF5733; /* Red */
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  display: inline-block;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: 2px solid #242424;
+  border-radius: 12px;
+  font-family: 'Montserrat', sans-serif; font-size: 20px;
+  /* font-family: 'Raleway', sans-serif; font-size: 20px; */
+}
+
+button2 {
+  background-color: #4333FF; /* Blue */
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  display: inline-block;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: 2px solid #242424;
+  border-radius: 12px;
+  font-family: 'Montserrat', sans-serif; font-size: 20px;
+  /* font-family: 'Raleway', sans-serif; font-size: 20px; */
+}

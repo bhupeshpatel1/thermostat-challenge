@@ -4,44 +4,62 @@
   <head>
     <title>Thermostat</title>
     <link rel="stylesheet" href="css/thermostat.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600;800&display=swap" rel="stylesheet"> -->
   </head>
 
   <body>
-    <section>
-      <h1>Temperature: <span id="temperature">20</h1>
-    </section>
+    <div id="main">
 
-    <section>
-      <p>
-        <button id="temperature-up">+</button>
-        <button id="temperature-down">-</button>
-        <button id="temperature-reset">reset</button>
-        power saving mode is <span id="power-saving-status">on</span>
-        <button id="powersaving-on">PSM on</button>
-        <button id="powersaving-off">PSM off</button>
-      </p>
-    </section>
+      <section>
+        <h4 style="font-weight: 600;">Thermostat</h4>
+        <h2 style="font-weight: 600; font-size: 50px">Temperature</h2>
+        <h1 style="font-weight: 900; font-size: 50px">
+          <div>
+            <div style="float: center">
+            <form> <button1 id="temperature-up"; >+</button></form>
+            </div>
+            <form>
+              <span id="temperature">20</span>
+            </form>
+            <div style="float: center">
+            <form><button2 id="temperature-down">-</button></form>
+              </div>
+          </div>
+        </h1>
+        <h1><button id="temperature-reset">RESET</button></h1>
+      </section>
 
-    <section>
-      <h4>Select your City:
-      <select id="current-city">
-        <option value="london">London</option>
-        <option value="delhi">New Delhi</option>
-        <option value="paris">Paris</option>
-        <option value="tokyo">Tokyo</option>
-      </select>
-      </h4>
-      <h4>Current Temperature:
+      <section>
+        <h4 style="font-weight: 600">
+          PSM <span id="power-saving-status">ON</span>
+        </h4>
         <p>
-          <span id="current-temperature"></span>
+          <button id="powersaving-on">PSM On</button>
+          <button id="powersaving-off">PSM Off</button>
         </p>
-      </h4>
-    </section>
+      </section>
+
+      <section>
+        <h0>
+          It's currently <span id="current-temperature"></span> degrees in
+          <select id="current-city">
+            <option value="london">London</option>
+            <option value="delhi">New Delhi</option>
+            <option value="paris">Paris</option>
+            <option value="tokyo">Tokyo</option>
+          </select>
+        </h0>
+      </section>
+
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="src/thermostat.js"></script>
     <script src="src/interface.js"></script>
+
     <!-- <script>
+    // inserting API's using vanilla JS:
       const api_url = 'http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric';
       async function getTemperature() {
         const response = await fetch(api_url);
